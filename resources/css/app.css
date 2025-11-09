@@ -1,0 +1,86 @@
+/* ===== Dark Mode Contrast Fixes (global) ===== */
+:root.dark, .dark {
+  --fg-strong:  #f1f5f9; /* slate-100 */
+  --fg-default: #e2e8f0; /* slate-200 */
+  --fg-muted:   #cbd5e1; /* slate-300 */
+  --fg-subtle:  #94a3b8; /* slate-400 */
+  --surface-1:  #0b1220; /* input bg */
+  --surface-2:  #0f172a; /* card bg */
+  --border-1:   #334155; /* slate-700 */
+  --ring-1:     rgba(56,189,248,.35); /* sky-400 */
+}
+
+/* Teks default di dark */
+.dark body { color: var(--fg-default); }
+.dark h1, .dark h2, .dark h3 { color: var(--fg-strong); }
+
+/* Label & teks “secondary” */
+.dark label, .dark .form-label { color: var(--fg-default); }
+.dark .text-muted, .dark .muted { color: var(--fg-subtle); }
+
+/* Input, select, textarea (Tailwind/HTML) */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="date"],
+.dark input[type="file"],
+.dark select,
+.dark textarea {
+  background: var(--surface-1);
+  color: var(--fg-default);
+  border-color: var(--border-1);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--fg-muted);
+  opacity: 1; /* jangan dipudarkan */
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: var(--ring-1);
+  box-shadow: 0 0 0 .2rem rgba(56,189,248,.16);
+}
+
+/* Disabled tetap terbaca */
+.dark input:disabled,
+.dark select:disabled,
+.dark textarea:disabled {
+  color: var(--fg-subtle);
+  background: #0a0f1a;
+  border-color: #2a3646;
+}
+
+/* Komponen Bootstrap di halaman auth (jika ada) */
+.dark .form-control,
+.dark .form-select {
+  background: var(--surface-1);
+  border-color: var(--border-1);
+  color: var(--fg-default);
+}
+.dark .form-control::placeholder { color: var(--fg-muted); }
+.dark .form-control:focus,
+.dark .form-select:focus {
+  border-color: var(--ring-1);
+  box-shadow: 0 0 0 .2rem rgba(56,189,248,.16);
+}
+
+/* Tabel */
+.dark table thead th { color: var(--fg-default); }
+.dark table, .dark td, .dark th { border-color: #1f2937; }
+
+/* Card glass di dark (lebih kontras) */
+.dark .card-glass {
+  background: rgba(15,23,42,.85);
+  color: var(--fg-default);
+  border: 1px solid rgba(148,163,184,.18);
+}
+
+/* Tombol sekunder/ghost agar tidak pudar */
+.dark .btn, .dark .btn-ghost {
+  color: var(--fg-default);
+  border-color: var(--border-1);
+}
